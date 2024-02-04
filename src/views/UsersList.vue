@@ -1,6 +1,7 @@
 <template>
+  <h2>Users List</h2>
   <div 
-    class="mb-3" 
+    class="mb-2" 
     style="display: flex; justify-content: space-between;"
   >
     <div class="form">
@@ -55,6 +56,7 @@
 
 <script>
 export default {
+  name: 'UsersList',
   data() {
     return {
       userList: []

@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+
+:root {
+  --bs-gray-300: #edeef0;
+  --bs-body-bg: #f8fafb;
+  --bs-body-color: #0e2238;
+  --bs-gray-600-rgb: 152,158,166;
+  --bs-body-color-rgb: 14, 34, 56;
+  --bs-table-bg: #ffffff;
+  --bs-border-color: #f4f4f4;
+  --bs-table-hover-bg: rgba(0, 186, 199, .1);
+  --bs-table-hover-color: var(--bs-body-color);
+  --bs-table-border-radius: 0.625rem;
+	--bs-table-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(14, 34, 56, .07);
+  --bs-form-control-bg: var(--bs-body-bg);
+}
+
+body {
+  background-color: #f1f5f7;
+  color: var(--bs-body-color);
+  padding: 3rem 3rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mr-3 {
+  margin-right: 3rem;
+}
+
+
+/* ----------------------------------- */
+/* -------------- Btn ---------------- */
+/* ----------------------------------- */
+
+.btn {
+  --bs-btn-padding-x: 1.5625rem;
+	--bs-btn-padding-y: 0.53125rem;
+  --bs-btn-font-size: 0.875rem;
+	--bs-btn-font-weight: 600;
+	--bs-btn-line-height: 1.5;
+  --bs-btn-border-width: 1px;
+	--bs-btn-border-color: transparent;
+  --bs-btn-border-radius: 1.25rem;
+  --bs-btn-color: #0e2238;
+	--bs-btn-bg: transparent;
+  --bs-btn-hover-border-color: transparent;
+  font-family: var(--bs-btn-font-family);
+	font-size: var(--bs-btn-font-size);
+	font-weight: var(--bs-btn-font-weight);
+	line-height: var(--bs-btn-line-height);
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+  border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+  border-radius: var(--bs-btn-border-radius);
+  color: var(--bs-btn-color);
+  background-color: var(--bs-btn-bg);
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn:hover {
+	background-color: var(--bs-btn-hover-bg);
+	border-color: var(--bs-btn-hover-border-color);
+	color: var(--bs-btn-hover-color);
+}
+
+.btn-success:active {
+  background-color: var(--bs-btn-active-bg);
+  border-color: var(--bs-btn-active-border-color);
+}
+
+.btn-secondary:active {
+  background-color: var(--bs-btn-active-bg);
+  border-color: var(--bs-btn-active-border-color);
+}
+
+.btn-success {
+	--bs-btn-color: #fff;
+	--bs-btn-bg: #31cf80;
+	--bs-btn-border-color: #31cf80;
+	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-bg: #2ab06d;
+	--bs-btn-hover-border-color: #27a666;
+	--bs-btn-focus-shadow-rgb: 80, 214, 147;
+	--bs-btn-active-color: #fff;
+	--bs-btn-active-bg: #27a666;
+	--bs-btn-active-border-color: #259b60;
+	--bs-btn-active-shadow: 0 0 transparent;
+	--bs-btn-disabled-color: #fff;
+	--bs-btn-disabled-bg: #31cf80;
+	--bs-btn-disabled-border-color: #31cf80;
+}
+
+.btn-secondary {
+	--bs-btn-color: #fff;
+	--bs-btn-bg: #9ea9b4;
+	--bs-btn-border-color: #9ea9b4;
+	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-bg: #869099;
+	--bs-btn-hover-border-color: #7e8790;
+	--bs-btn-focus-shadow-rgb: 173, 182, 191;
+	--bs-btn-active-color: #fff;
+	--bs-btn-active-bg: #7e8790;
+	--bs-btn-active-border-color: #777f87;
+	--bs-btn-active-shadow: 0 0 transparent;
+	--bs-btn-disabled-color: #fff;
+	--bs-btn-disabled-bg: #9ea9b4;
+	--bs-btn-disabled-border-color: #9ea9b4;
+}
+
+/* ----------------------------------- */
+/* -------------- Btn ---------------- */
+/* ----------------------------------- */
+
+
+
+/* ----------------------------------- */
+/* -------------- Form --------------- */
+/* ----------------------------------- */
+
+.form-control {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: .625rem .75rem;
+  border: 1px solid var(--bs-gray-300);
+	border-radius: .625rem;
+	box-shadow: 0 0 transparent;
+  color: var(--bs-body-color);
+  background-color: var(--bs-form-control-bg);
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-control:focus {
+	background-color: var(--bs-form-control-bg);
+	border-color: #00bac7;
+	box-shadow: 0 0 transparent, 0 0 .75rem 0 rgba(0, 186, 199, .25);
+	color: var(--bs-body-color);
+	outline: 0;
+}
+
+.form-control::-webkit-date-and-time-value {
+	height: 1.5rem;
+}
+
+.form-control::-moz-placeholder {
+	color: rgba(var(--bs-body-color-rgb), .4);
+}
+
+.form-control::placeholder {
+	color: rgba(var(--bs-body-color-rgb), .4);
+}
+
+.form-control:disabled {
+	background-color: #edeef0;
+	opacity: 1;
+}
+
+.form-control {
+	font-family: Open Sans,Segoe UI Emoji,Segoe UI Symbol,Segoe UI,Apple Color Emoji,Twemoji Mozilla,Noto Color Emoji,EmojiOne Color,Android Emoji,sans-serif,system-ui,-apple-system;
+}
+
+.form {
+  display: flex;
+  width: 23rem;
+}
+
+.form__search {
+  width: 100%;
+}
+
+/* ----------------------------------- */
+/* -------------- Form --------------- */
+/* ----------------------------------- */
+
+
+
+.table-box {
+	box-shadow: var(--bs-table-box-shadow);
+	border-radius: var(--bs-table-border-radius);
+}
+
+.table-box__top,
+.table-box__bottom {
+	padding: 0.7rem 1.25rem;
+	background-color: var(--bs-table-bg);
+}
+
+.table-box__top {
+	border-top-left-radius: var(--bs-table-border-radius);
+	border-top-right-radius: var(--bs-table-border-radius);
+}
+
+.table-box__bottom {
+	border-bottom-left-radius: var(--bs-table-border-radius);
+	border-bottom-right-radius: var(--bs-table-border-radius);
+}
+
+.table-main {
+  width: 100%;
+  background-color: var(--bs-table-bg);
+  border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+}
+
+.table-main>:not(caption)>*>* {
+	background-color: transparent;
+	border-bottom-width: 1px;
+	box-shadow: inset 0 0 0 9999px transparent;
+	padding: 0.3rem 1.25rem;
+}
+
+.table-main>thead {
+	border-top: 1px solid;
+	border-color: var(--bs-border-color);
+}
+
+.table-main__head {
+	background-color: rgba(var(--bs-gray-600-rgb), .1);
+}
+
+.table-main__head th {
+	color: rgba(var(--bs-body-color-rgb),.3225);
+	font-size: 0.75rem;
+	padding: 0.5rem 1.25rem;
+	/* font-family: var(--bs-font-monospace); */
+	font-family: var(--bs-body-font-family);
+}
+
+.table_hover>tbody>tr:hover>* {
+	background-color: var(--bs-table-hover-bg);
+	color: var(--bs-table-hover-color)
+}

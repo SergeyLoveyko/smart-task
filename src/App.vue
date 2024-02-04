@@ -1,15 +1,12 @@
 <template>
-  <h1>Users List</h1>
   <!-- <the-userlist></the-userlist> -->
+  <router-view/>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
   components: {
-    // HelloWorld
   }
 }
 </script>
