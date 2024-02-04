@@ -13,6 +13,7 @@
   --bs-table-hover-color: var(--bs-body-color);
   --bs-table-border-radius: 0.625rem;
 	--bs-table-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(14, 34, 56, .07);
+  --bs-form-bg: #ffffff;
   --bs-form-control-bg: var(--bs-body-bg);
 }
 
@@ -20,6 +21,32 @@ body {
   background-color: #f1f5f7;
   color: var(--bs-body-color);
   padding: 3rem 3rem;
+  margin: 0;
+}
+
+.d-flex {
+  display: flex!important;
+}
+
+.justify-content-between {
+  justify-content: space-between!important;
+}
+
+.justify-content-end {
+  justify-content: flex-end!important;
+}
+
+.row>* {
+  flex-shrink: 0;
+  /* width: 100%; */
+  /* max-width: 100%; */
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-top: var(--bs-gutter-y);
+}
+
+.mt-4 {
+  margin-top: 4rem;
 }
 
 .mb-2 {
@@ -28,6 +55,14 @@ body {
 
 .mr-3 {
   margin-right: 3rem;
+}
+
+.mr-5 {
+  margin-right: 5rem;
+}
+
+.pr-3 {
+  padding-right: 3rem;
 }
 
 
@@ -45,8 +80,8 @@ body {
 	--bs-btn-border-color: transparent;
   --bs-btn-border-radius: 1.25rem;
   --bs-btn-color: #0e2238;
-	--bs-btn-bg: transparent;
-  --bs-btn-hover-border-color: transparent;
+	/* --bs-btn-bg: transparent;
+  --bs-btn-hover-border-color: transparent; */
   font-family: var(--bs-btn-font-family);
 	font-size: var(--bs-btn-font-size);
 	font-weight: var(--bs-btn-font-weight);
@@ -68,6 +103,11 @@ body {
 	color: var(--bs-btn-hover-color);
 }
 
+.btn-primary {
+  background-color: var(--bs-btn-active-bg);
+  border-color: var(--bs-btn-active-border-color);
+}
+
 .btn-success:active {
   background-color: var(--bs-btn-active-bg);
   border-color: var(--bs-btn-active-border-color);
@@ -76,6 +116,23 @@ body {
 .btn-secondary:active {
   background-color: var(--bs-btn-active-bg);
   border-color: var(--bs-btn-active-border-color);
+}
+
+.btn-primary {
+	--bs-btn-color: #fff;
+	--bs-btn-bg: #00bac7;
+	--bs-btn-border-color: #00bac7;
+	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-bg: #009ea9;
+	--bs-btn-hover-border-color: #00959f;
+	--bs-btn-focus-shadow-rgb: 38, 196, 207;
+	--bs-btn-active-color: #fff;
+	--bs-btn-active-bg: #00959f;
+	--bs-btn-active-border-color: #008c95;
+	--bs-btn-active-shadow: 0 0 transparent;
+	--bs-btn-disabled-color: #fff;
+	--bs-btn-disabled-bg: #00bac7;
+	--bs-btn-disabled-border-color: #00bac7;
 }
 
 .btn-success {
@@ -122,7 +179,34 @@ body {
 /* -------------- Form --------------- */
 /* ----------------------------------- */
 
+
+.form-container {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.form-box {
+  box-shadow: var(--bs-table-box-shadow);
+  border-radius: var(--bs-table-border-radius);
+}
+
+.form {
+  --bs-form-spacer-y: 1.2500000001rem;
+  --bs-form-spacer-x: 1.2500000001rem;
+  border-radius: var(--bs-table-border-radius);
+  padding: var(--bs-form-spacer-y) var(--bs-form-spacer-x);
+  background-color: var(--bs-form-bg);
+  align-items: center;
+}
+
+.form>*:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
 .form-control {
+  -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
   display: block;
   font-size: 0.75rem;
   font-weight: 400;
@@ -134,6 +218,7 @@ body {
   color: var(--bs-body-color);
   background-color: var(--bs-form-control-bg);
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  width: 92%;
 }
 
 .form-control:focus {
@@ -165,14 +250,32 @@ body {
 	font-family: Open Sans,Segoe UI Emoji,Segoe UI Symbol,Segoe UI,Apple Color Emoji,Twemoji Mozilla,Noto Color Emoji,EmojiOne Color,Android Emoji,sans-serif,system-ui,-apple-system;
 }
 
-.form {
-  display: flex;
-  width: 23rem;
+.form-label {
+	font-size: .75rem;
+	font-weight: 700;
+	margin-bottom: 0.3125rem;
 }
 
-.form__search {
-  width: 100%;
+.form-label-col {
+	padding-top: calc(0.625rem + 1px);
+	margin-bottom: 0;
 }
+
+.form-65 {
+	width: 65%;
+}
+
+/* .form {
+  display: flex;
+  width: 23rem;
+} */
+
+/* .form__search {
+  width: 100%;
+} */
+
+
+
 
 /* ----------------------------------- */
 /* -------------- Form --------------- */
@@ -236,3 +339,5 @@ body {
 	background-color: var(--bs-table-hover-bg);
 	color: var(--bs-table-hover-color)
 }
+
+

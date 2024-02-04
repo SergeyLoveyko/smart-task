@@ -1,10 +1,10 @@
 <template>
   <h2>Users List</h2>
   <div 
-    class="mb-2" 
-    style="display: flex; justify-content: space-between;"
+    class="d-flex align-items-start mb-2 pr-3" 
+    style="justify-content: space-between;"
   >
-    <div class="form">
+    <div class="d-flex row">
       <input 
         class="form__search form-control mr-3"
         placeholder="Search"
