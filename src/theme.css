@@ -3,6 +3,7 @@
 
 :root {
   --bs-gray-300: #edeef0;
+	--bs-gray-800: #343a40;
   --bs-body-bg: #f8fafb;
   --bs-body-color: #0e2238;
   --bs-gray-600-rgb: 152,158,166;
@@ -28,12 +29,20 @@ body {
   display: flex!important;
 }
 
+.justify-content-around {
+	justify-content: space-around;
+}
+
 .justify-content-between {
   justify-content: space-between!important;
 }
 
 .justify-content-end {
   justify-content: flex-end!important;
+}
+
+.text-align-start {
+	text-align: start;
 }
 
 .row>* {
@@ -63,6 +72,10 @@ body {
 
 .pr-3 {
   padding-right: 3rem;
+}
+
+.width-110 {
+	width: 110px;
 }
 
 
@@ -167,6 +180,21 @@ body {
 	--bs-btn-disabled-color: #fff;
 	--bs-btn-disabled-bg: #9ea9b4;
 	--bs-btn-disabled-border-color: #9ea9b4;
+}
+
+.btn-none {
+	border: none;
+	background: none;
+	padding: 0;
+}
+
+.bi {
+	font-size: 1.5rem;
+	color: var(--bs-gray-800);
+}
+
+button:not(:disabled) {
+	cursor: pointer;
 }
 
 /* ----------------------------------- */

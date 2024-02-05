@@ -79,7 +79,7 @@ export default {
         name: this.form.userName,
         email: this.form.userEmail
       }
-      this.axios.post('https://reqres.in/api/users', userData)
+      this.axios.post('/users', userData)
         .then( responce => {
           console.log( responce );
           this.form.userName = '',
