@@ -42,7 +42,11 @@
           <td>
             <img class="table__img" :src="user.avatar" alt="avatar">
           </td>
-          <td class="text-align-start">{{ user.first_name }}</td>
+          <td class="text-align-start">
+            <a href="/" @click.prevent="openUserDetails(index)">
+              {{ user.first_name }} 
+            </a>
+            </td>
           <td class="text-align-start">{{ user.email }}</td>
           <!-- <td>({{ index }})</td> -->
           <!-- <td>{{ user.id }}</td> -->
@@ -61,19 +65,33 @@
     </table>
     <div class="table-box__bottom"></div>
   </div>
+  <UserDetailsModal :show="showUserModal" :user="user" @close="closeUserModal"/>
 </template>
 
 <script>
+import {ref} from "vue"
+import UserDetailsModal from "../components/UserDetailsModal.vue"
+
 export default {
   name: 'UsersList',
+
+  components: {
+    UserDetailsModal
+  },
+
   data() {
     return {
-      userList: []
+      userList: [],
+      user: null,
+      showUserModal: ref(false)
     }
   },
-  // methods: {
-  // },
   methods: {
+    openUserDetails(index) {
+      this.user = this.userList[index];
+      console.log( this.user );
+      this.showUserModal = true
+    },
     removeUser(index) {
       this.userList.splice(index, 1);
       this.axios.delete(`/users/${index}`)
@@ -81,6 +99,9 @@ export default {
           console.log( responce );
         })
         .catch((error) => console.log( error ));
+    },
+    closeUserModal() {
+      this.showUserModal = false
     }
   },
   mounted() {
@@ -88,7 +109,7 @@ export default {
       .then((response) => (this.userList = response.data.data))
       .catch((error) => console.log( error ));
 
-  }
+  },
 }
 </script>
 

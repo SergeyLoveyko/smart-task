@@ -8,10 +8,12 @@
   --bs-body-color: #0e2238;
   --bs-gray-600-rgb: 152,158,166;
   --bs-body-color-rgb: 14, 34, 56;
-  --bs-table-bg: #ffffff;
+	--bs-link-color: #48a5ac;
   --bs-border-color: #f4f4f4;
+  --bs-table-bg: #ffffff;
   --bs-table-hover-bg: rgba(0, 186, 199, .1);
   --bs-table-hover-color: var(--bs-body-color);
+  --bs-table-hover-link: var(--bs-gray-800);
   --bs-table-border-radius: 0.625rem;
 	--bs-table-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(14, 34, 56, .07);
   --bs-form-bg: #ffffff;
@@ -23,6 +25,15 @@ body {
   color: var(--bs-body-color);
   padding: 3rem 3rem;
   margin: 0;
+}
+
+a,
+a:hover {
+	text-decoration: none;
+}
+
+a {
+	color: var(--bs-link-color);
 }
 
 .d-flex {
@@ -366,6 +377,11 @@ button:not(:disabled) {
 .table_hover>tbody>tr:hover>* {
 	background-color: var(--bs-table-hover-bg);
 	color: var(--bs-table-hover-color)
+}
+
+.table_hover>tbody>tr:hover>* a {
+	/* background-color: var(--bs-table-hover-bg); */
+	color: var(--bs-table-hover-link)
 }
 
 
