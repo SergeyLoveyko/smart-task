@@ -5,10 +5,27 @@
     style="justify-content: space-between;"
   >
     <div class="d-flex row">
-      <input 
-        class="form__search form-control mr-3"
-        placeholder="Search"
-      >
+      <div class="d-flex mr-3">
+        <input 
+          class="form__search form-control mr-2"
+          placeholder="Search"
+          v-model="inputValue"
+          @keyup="filterUsers"
+        >
+        <select 
+          class="form-control form_65"
+          id="parentCategory"
+          placeholder="Enter parent name"
+          aria-describedby="parentCategoryHelp"
+          v-model="categoryValue"
+        >
+          <option disabled value="">Select category</option>
+          <option value="first_name">Name</option>
+          <option value="email">Email</option>
+          <option value="phone">Phone</option>
+          <option value="adress">Adress</option>
+        </select>
+      </div>
       <button 
         class="form__btn btn btn-secondary"
         type="button"
@@ -37,7 +54,7 @@
       </thead>
       <tbody>
         <tr class="table__line" 
-            v-for="(user, index) in userList" :key="user.id"
+            v-for="(user, index) in usersList" :key="user.id"
         >
           <td>
             <img class="table__img" :src="user.avatar" alt="avatar">
@@ -81,35 +98,64 @@ export default {
 
   data() {
     return {
-      userList: [],
+      usersListStor: [],
+      usersList: [],
+      sortUsersList: null,
       user: null,
+      inputValue: '',
+      categoryValue: '',
       showUserModal: ref(false)
     }
   },
   methods: {
+    copyUserList(userListStart) {
+      this.usersListStor = userListStart;
+      this.usersList = userListStart;
+    },
+
     openUserDetails(index) {
-      this.user = this.userList[index];
-      console.log( this.user );
+      this.user = this.usersList[index];
       this.showUserModal = true
     },
+
     removeUser(index) {
-      this.userList.splice(index, 1);
+      this.usersList.splice(index, 1);
       this.axios.delete(`/users/${index}`)
         .then( responce => {
           console.log( responce );
         })
         .catch((error) => console.log( error ));
     },
+
     closeUserModal() {
       this.showUserModal = false
-    }
-  },
-  mounted() {
-    this.axios.get('/users')
-      .then((response) => (this.userList = response.data.data))
-      .catch((error) => console.log( error ));
+    },
 
+    filterUsers() {
+
+      const rgx = new RegExp(this.inputValue, 'i');
+      this.usersList = this.usersListStor.filter(item => {
+        if (rgx.test( item[this.categoryValue] )) {
+          return true;
+        } else {
+          return false;
+        }
+      })
+
+    },
   },
+  // mounted() {
+  //   this.axios.get('/users')
+  //     .then((response) => (this.usersList = response.data.data))
+  //     .catch((error) => console.log( error ));
+  // },
+  created() {
+    this.axios.get('/users').then(response => {
+          this.copyUserList(response.data.data);
+    })
+  }
+
+
 }
 </script>
 
